@@ -105,8 +105,8 @@ a:hover {
 	color: var(--live-hover);
 }
 
-.accent_colour {
-	color: var(--live-link) !important;
+.accent_fullstop {
+	color: var(--accent-hover-light) !important;
 }
 
 /* Legacy, moved to h3 */
