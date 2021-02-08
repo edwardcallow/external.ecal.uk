@@ -128,6 +128,11 @@ a:hover {
 	color: var(--live-muted) !important;
 }
 
+.custom-badge {
+	background-color: var(--live-text);
+	color: var(--live-background);
+}
+
 /* Time-based dark-mode switching (do not remove) */
 .appearance_night { 
 	--live-background: var(--background-dark);
