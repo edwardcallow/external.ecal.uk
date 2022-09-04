@@ -19,8 +19,8 @@
 	/* Horizon accent colour set */
 	--accent-normal-light: #2e0f36;
 	--accent-hover-light: #7b3381;
-	--accent-normal-dark: #7b3381;
-	--accent-hover-dark: #bd87bf;
+	--accent-normal-dark: #bd87bf;
+	--accent-hover-dark: #7b3381;
 
 	/* Live variables - do not change */
 	--live-background: var(--background-light);
@@ -72,6 +72,11 @@ a:hover {
 	font-weight: 300 !important;
 }
 
+.form-control {
+	font-weight:  300 !important;
+	background-color: ;
+	color: ;
+}
 
 .accent_fullstop {
 	color: var(--accent-hover-light) !important;
