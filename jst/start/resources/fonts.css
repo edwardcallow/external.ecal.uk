@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'DalaFloda';
+	font-style: normal;
+	font-weight: 700;
+	src: url('fonts/DalaFloda-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Flama';
+	font-style: normal;
+	font-weight: 300;
+	src: url('fonts/Flama-Book.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Flama';
+	font-style: italic;
+	font-weight: 400;
+	src: url('fonts/Flama-Italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Flama';
+	font-style: normal;
+	font-weight: 500;
+	src: url('fonts/Flama-Medium.woff') format('woff');
+}
