@@ -9,33 +9,39 @@
 	/* Background colours */
 	--background-light: #ffffff;
 	--background-dark: #1f1f1f;
+	--header-light: #1f1f1f;
+	--header-dark: #0f0f0f;
 
 	/* Text colours */
-	--text-normal-light: #333333;
+	--text-light: #000000;
+	--text-dark: #ffffff;
 	--text-muted-light: #545454;
-	--text-normal-dark: #ffffff;
 	--text-muted-dark: #aeaeae;
-	/* Link colours (new) */
 	--link-normal-light: #333333;
-	--link-hover-light: #6666ff;
 	--link-normal-dark: #ffffff;
-	--link-normal-light: #6666ff;
+	--link-hover-light: #4353ff;
+	--link-hover-dark: #4353ff;
 
 	/* Horizon accent colour set */
-	--accent-normal-light: #1f1f1f;
+	/* --accent-normal-light: #1f1f1f;
 	--accent-hover-light: #6666ff;
 	--accent-normal-dark: #0f0f0f;
 	--accent-hover-dark: #6666ff;
 	--accent-special-light: #ab1b00;
-	--accent-special-dark: #fd411c;
+	--accent-special-dark: #fd411c; */
+
+	/* Accent colours */
+	--accent-light: #ab1b00;
+	--accent-dark: #fd411c;
 
 	/* Live variables - do not change */
 	--live-background: var(--background-light);
-	--live-text: var(--text-normal-light);
+	--live-header: var(--header-light);
+	--live-text: var(--text-light);
 	--live-muted: var(--text-muted-light);
-	--live-link: var(--accent-normal-light);
-	--live-hover: var(--accent-hover-light);
-	--live-special: var(--accent-special-light);
+	--live-link: var(--link-normal-light);
+	--live-hover: var(--link-hover-light);
+	--live-accent: var(--accent-light);
 }
 
 body {
@@ -74,6 +80,16 @@ a:hover {
 	color: var(--live-hover);
 }
 
+a.unstyled-link {
+	color: var(--live-text);
+}
+
+a:hover.unstyled-link {
+	color: var(--live-text);
+	text-decoration: none;
+}
+
+/*
 .search-box-light-text {
 	font-weight: 300 !important;
 }
@@ -87,13 +103,10 @@ a:hover {
 	background-color: ;
 	color: ;
 }
+*/
 
 .accent_fullstop {
-	color: var(--accent-hover-light) !important;
-}
-
-.text_red {
-	color: var(--live-special) !important;
+	color: var(--live-accent) !important;
 }
 
 /* Legacy, moved to h3 */
@@ -116,18 +129,19 @@ a:hover {
 }
 
 .custom-badge {
-	background-color: var(--live-text);
+	background-color: var(--live-muted);
 	color: var(--live-background);
 }
 
 /* Time-based dark-mode switching (do not remove) */
 .appearance_night { 
 	--live-background: var(--background-dark);
-	--live-text: var(--text-normal-dark);
+	--live-header: var(--header-dark);
+	--live-text: var(--text-dark);
 	--live-muted: var(--text-muted-dark);
-	--live-link: var(--accent-normal-dark);
-	--live-hover: var(--accent-hover-dark);
-	--live-special: var(--accent-special-dark);
+	--live-link: var(--link-normal-dark);
+	--live-hover: var(--link-hover-dark);
+	--live-accent: var(--accent-dark);
 }
 
 .message_date {
@@ -137,23 +151,22 @@ a:hover {
 }
 
 #navbar_styling {
-	background-color: var(--accent-normal-light);
+	background-color: var(--live-header);
 }
 
 #current_time {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 /* Preference-based dark-mode switching */
-/*
 @media (prefers-color-scheme: dark) { 
 	:root {
 		--live-background: var(--background-dark);
-		--live-text: var(--text-normal-dark);
+		--live-header: var(--header-dark);
+		--live-text: var(--text-dark);
 		--live-muted: var(--text-muted-dark);
-		--live-link: var(--accent-normal-dark);
-		--live-hover: var(--accent-hover-dark);
-		--live-special: var(--accent-special-dark);
+		--live-link: var(--link-normal-dark);
+		--live-hover: var(--link-hover-dark);
+		--live-accent: var(--accent-dark);
 	}
 }
-*/
