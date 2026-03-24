@@ -20,7 +20,7 @@
 	--link-normal-light: #333333;
 	--link-normal-dark: #ffffff;
 	--link-hover-light: #4353ff;
-	--link-hover-dark: #4353ff;
+	--link-hover-dark: #6666ff;
 
 	/* Horizon accent colour set */
 	/* --accent-normal-light: #1f1f1f;
@@ -51,7 +51,7 @@ body {
 	background-color: var(--live-background);
 	color: var(--live-text);
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	font-weight: 300;
+	font-weight: 400;
 }
 
 h1 {
