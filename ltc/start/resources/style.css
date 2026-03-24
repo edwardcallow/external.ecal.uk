@@ -1,0 +1,159 @@
+:root {
+	/* Colour guide (values taken from Apple macOS VD-HIGs
+		Accent normal light:	Aqua
+		Accent hover light:		Aqua with brightness(-30%)
+		Accent normal dark:		Dark
+		Accent hover dark:		Dark with hue(+1), saturation(-21)
+	*/
+
+	/* Background colours */
+	--background-light: #ffffff;
+	--background-dark: #1f1f1f;
+
+	/* Text colours */
+	--text-normal-light: #333333;
+	--text-muted-light: #545454;
+	--text-normal-dark: #ffffff;
+	--text-muted-dark: #aeaeae;
+	/* Link colours (new) */
+	--link-normal-light: #333333;
+	--link-hover-light: #6666ff;
+	--link-normal-dark: #ffffff;
+	--link-normal-light: #6666ff;
+
+	/* Horizon accent colour set */
+	--accent-normal-light: #1f1f1f;
+	--accent-hover-light: #6666ff;
+	--accent-normal-dark: #0f0f0f;
+	--accent-hover-dark: #6666ff;
+	--accent-special-light: #ab1b00;
+	--accent-special-dark: #fd411c;
+
+	/* Live variables - do not change */
+	--live-background: var(--background-light);
+	--live-text: var(--text-normal-light);
+	--live-muted: var(--text-muted-light);
+	--live-link: var(--accent-normal-light);
+	--live-hover: var(--accent-hover-light);
+	--live-special: var(--accent-special-light);
+}
+
+body {
+	padding-top: 7rem;
+	padding-bottom: 2rem;
+	margin-bottom: 60px;
+	background-color: var(--live-background);
+	color: var(--live-text);
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-weight: 300;
+}
+
+h1 {
+	font-family: "Italian Plate No2",Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h3 {
+	padding-top: 1.5rem;
+	padding-bottom: .5rem;
+	font-family: "Canela Web",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-weight: 700;
+}
+
+p {
+	margin-bottom: .5em;
+	/*line-height: 1.2em;*/
+}
+
+a {
+	color: var(--live-link);
+}
+
+a:hover {
+	color: var(--live-hover);
+}
+
+.search-box-light-text {
+	font-weight: 300 !important;
+}
+
+.btn-light-text {
+	font-weight: 300 !important;
+}
+
+.form-control {
+	font-weight:  300 !important;
+	background-color: ;
+	color: ;
+}
+
+.accent_fullstop {
+	color: var(--accent-hover-light) !important;
+}
+
+.text_red {
+	color: var(--live-special) !important;
+}
+
+/* Legacy, moved to h3 */
+.section_heading {
+	padding-top: 1.5rem;
+	padding-bottom: .5rem;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: var(--live-background);
+}
+
+.text-muted {
+	color: var(--live-muted) !important;
+}
+
+.custom-badge {
+	background-color: var(--live-text);
+	color: var(--live-background);
+}
+
+/* Time-based dark-mode switching (do not remove) */
+.appearance_night { 
+	--live-background: var(--background-dark);
+	--live-text: var(--text-normal-dark);
+	--live-muted: var(--text-muted-dark);
+	--live-link: var(--accent-normal-dark);
+	--live-hover: var(--accent-hover-dark);
+	--live-special: var(--accent-special-dark);
+}
+
+.message_date {
+	color: var(--live-muted) !important;
+	font-weight: bold;
+	/* font-style: italic; */
+}
+
+#navbar_styling {
+	background-color: var(--accent-normal-light);
+}
+
+#current_time {
+	font-weight: bold;
+}
+
+/* Preference-based dark-mode switching */
+/*
+@media (prefers-color-scheme: dark) { 
+	:root {
+		--live-background: var(--background-dark);
+		--live-text: var(--text-normal-dark);
+		--live-muted: var(--text-muted-dark);
+		--live-link: var(--accent-normal-dark);
+		--live-hover: var(--accent-hover-dark);
+		--live-special: var(--accent-special-dark);
+	}
+}
+*/
