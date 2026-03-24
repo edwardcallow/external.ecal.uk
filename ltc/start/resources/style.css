@@ -22,14 +22,6 @@
 	--link-hover-light: #4353ff;
 	--link-hover-dark: #6666ff;
 
-	/* Horizon accent colour set */
-	/* --accent-normal-light: #1f1f1f;
-	--accent-hover-light: #6666ff;
-	--accent-normal-dark: #0f0f0f;
-	--accent-hover-dark: #6666ff;
-	--accent-special-light: #ab1b00;
-	--accent-special-dark: #fd411c; */
-
 	/* Accent colours */
 	--accent-light: #ab1b00;
 	--accent-dark: #fd411c;
@@ -105,7 +97,7 @@ a:hover.unstyled-link {
 }
 */
 
-.accent_fullstop {
+.accent_text {
 	color: var(--live-accent) !important;
 }
 
