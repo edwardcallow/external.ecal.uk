@@ -32,7 +32,7 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbar_collapse">
 						<form method="get" action="https://www.google.com/search" autocomplete="off" class="form-inline my-2 my-lg-0 ml-auto">
-							<input class="form-control mr-sm-2 search-box-light-text" type="search" name="q" placeholder="Google search" aria-label="Google search" autofocus>
+							<input class="form-control mr-sm-2 search-box-light-text" type="search" name="q" placeholder="Google search" aria-label="Google search">
 							<button class="btn btn-outline-light my-2 my-sm-0 search-box-light-text" type="submit">Search</button>
 						</form>
 					</div>
@@ -58,26 +58,27 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<h3>Tools</h3>
-					<p><a href="http://mail.google.com/mail/u/2">Gmail</a></p>
-					<p><a href="http://calendar.google.com/u/2">Calendar</a></p>
-					<p><a href="https://drive.google.com/drive/u/2/shared-drives">Shared drives</a></p>
-					<p><a href="https://app.smartsheet.com">Smartsheet</a></p>
-					<p><a href="https://groups.google.com/u/2">Groups</a></p>
+					<p><a href="http://mail.google.com/mail/u/2" data-key="m">G<span class="shortcut">m</span>ail</a></p>
+					<p><a href="http://calendar.google.com/u/2" data-key="c"><span class="shortcut">C</span>alendar</a></p>
+					<p><a href="https://drive.google.com/drive/u/2/shared-drives" data-key="d">Shared <span class="shortcut">d</span>rives</a></p>
+					<p><a href="https://app.smartsheet.com" data-key="s"><span class="shortcut">S</span>martsheet</a></p>
+					<p><a href="https://groups.google.com/u/2" data-key="g"><span class="shortcut">G</span>roups</a></p>
 				</div>
 				<div class="col-sm-3">
 					<h3>Systems</h3>
-					<p><a href="https://app.rotacloud.com/31229/rotas">RotaCloud</a></p>
-					<p><a href="https://my.signinapp.com">Sign In App</a></p>
-					<p><a href="https://ltc.hub.voxhub.net">Voxhub</a></p>
+					<p><a href="https://app.rotacloud.com/31229/rotas" data-key="r"><span class="shortcut">R</span>otaCloud</a></p>
+					<p><a href="https://my.signinapp.com" data-key="i">Sign <span class="shortcut">I</span>n App</a></p>
+					<p><a href="https://ltc.hub.voxhub.net" data-key="v"><span class="shortcut">V</span>oxhub</a></p>
 					<p><a href="https://unifi.ui.com/dashboard">Network management</a></p>
-					<p><a href="https://bms.internal">BMS</a> <span class="text-muted font-weight-light">(Internal)</span></p>
+					<p><a href="https://bms.internal" data-key="b"><span class="shortcut">B</span>MS</a> <span class="text-muted font-weight-light">(Internal)</span></p>
 					<p><a href="http://172.80.0.10">Switch</a> <span class="text-muted font-weight-light">(Internal)</span></p>
 				</div>
 				<div class="col-sm-3">
 					<h3>Finance</h3>
-					<p><a href="https://www.expensify.com/expenses">Expensify</a></p>
+					<p><a href="https://www.expensify.com/expenses" data-key="e"><span class="shortcut">E</span>xpensify</a></p>
 					<p><a href="https://clearspend.coutts.com">ClearSpend</a></p>
 					<p><a href="https://app.staffologyhr.co.uk/portal">Iris</a><!-- <span class="badge custom-badge">New</span>--></p>
+					<p><a href="https://employee.brightpay.com/london-theatre-company-productions-limited/">Brightpay</a></p>
 				</div>
 				<div class="col-sm-3">
 					<h3>Records</h3>
@@ -120,11 +121,11 @@
 				</div>
 				<div class="col-sm-3">
 					<h3>Reference</h3>
-					<p><a href="https://bridgetheatre.co.uk">Website</a><!-- / <a href="https://www.eticketing.co.uk/jermynstreettheatre/Events">Ticketing</a>--></p>
+					<p><a href="https://bridgetheatre.co.uk">Website</a></p>
 					<p><a href="https://gov.uk/business">GOV.UK</a></p>
 					<p><a href="https://www.southwark.gov.uk/business-and-licences">Southwark Council</a></p>
 					<p><a href="https://hse.gov.uk">Health and Safety Executive</a></p>
-					<p><a href="http://www.technical-standards-for-places-of-entertainment.co.uk/TS/index.php?link=b0263ce36a0ad36d2ef9b88e9afc774a">Yellow book</a></p>
+					<p><a href="http://www.technical-standards-for-places-of-entertainment.co.uk/TS/index.php?link=b0263ce36a0ad36d2ef9b88e9afc774a" data-key="y"><span class="shortcut">Y</span>ellow book</a></p>
 				</div>
 				<div class="col-sm-6">
 					<h3>Useful info</h3>
@@ -213,5 +214,33 @@
 		else {
 				document.getElementById("root_of_all_evil").className = "appearance_night";
 		}
+	</script>
+	<!-- Keyboard shortcut listener -->
+	<script>
+		let lastKey = null;
+		let lastTime = 0;
+		const delay = 300; // maximum allowed time in ms between keypresses
+		document.addEventListener("keydown", function (keypressEvent) {
+			// Check if cursor in input field and ignore if so
+			const target = keypressEvent.target;
+			if (
+				target.tagName === "INPUT" ||
+				target.tagName === "TEXTAREA" ||
+				target.isContentEditable
+			) {
+    			return;
+  			}
+			const now = Date.now();
+			// Has key been pressed within delay time?
+			if (lastKey === keypressEvent.key && (now - lastTime) < delay) {
+				// Find link for key pressed
+				const link = document.querySelector(`a[data-key="${keypressEvent.key}"]`);
+				if (link) {
+					link.click();
+		 		}
+			}
+			lastKey = keypressEvent.key;
+			lastTime = now;
+		});
 	</script>
 </html>

@@ -81,6 +81,16 @@ a:hover.unstyled-link {
 	text-decoration: none;
 }
 
+a .shortcut {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: var(--live-muted);
+}
+
+a:hover .shortcut {
+	text-decoration: none;
+}
+
 /*
 .search-box-light-text {
 	font-weight: 300 !important;
